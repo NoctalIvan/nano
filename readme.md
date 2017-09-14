@@ -71,7 +71,7 @@ data = {
 <code>
 
 	- Hello Thomas Mazur
-	- Hello Ivan Sedlezki
+	- Hello Ivan Sedletzki
 
 </code>
 
