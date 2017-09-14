@@ -39,7 +39,7 @@ And now with NANO++, you can also match arrays!
 
 The syntax is simple, match the following data :
 
-<pre>
+<code>
 data = {
   users: [
   	{
@@ -52,11 +52,11 @@ data = {
   	}
   ]
 }
-</pre>
+</code>
 
 ... with the following template :
 
-<pre>
+<code>
 	
 <ul>
 	[{users}
@@ -64,7 +64,7 @@ data = {
 	]
 </ul>
 	
-</pre>
+</code>
 
 ... to get 
 
