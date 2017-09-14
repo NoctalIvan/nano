@@ -1,4 +1,4 @@
-NANO - Simplest Template Engine
+NANO++ - Simplest Template Engine, now with array template!
 =============================
 
 ***Basic Usage***
@@ -31,13 +31,50 @@ and you get ready string:
   &lt;p&gt;Hello Thomas Mazur! Your account is &lt;strong&gt;active&lt;/strong&gt;&lt;/p&gt;
 </code>
 
-Test page: <a href="testPage.html">testPage.html</a>
-
 Simple huh?
 
-***More Advanced Example***
+***Array matching***
 
+And now with NANO++, you can also match arrays!
 
-Displaying list of twitter search results (JSONP API)
+The syntax is simple, match the following data :
 
-http://jsfiddle.net/UXZDy/86/
+<pre>
+data = {
+  users: [
+  	{
+  		first_name: "Thomas",
+  		last_name: "Mazur"
+  	},
+  	{
+  		first_name: "Ivan",
+  		last_name: "Sedletzki"
+  	}
+  ]
+}
+</pre>
+
+... with the following template :
+
+<pre>
+	
+<ul>
+	[{users}
+		<li>Hello {first_name} {last_name}</li>
+	]
+</ul>
+	
+</pre>
+
+... to get 
+
+<code>
+
+	- Hello Thomas Mazur
+	- Hello Ivan Sedlezki
+
+</code>
+
+See the test page: <a href="testPage.html">testPage.html</a> for a complete exemple.
+
+Endless thanks to Trix (https://github.com/trix) for the original NANO template engine

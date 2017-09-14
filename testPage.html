@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Test page for nano</title>
-    <!-- include lib -->
-    <script type="text/javascript" src="nano.js"></script>
 
-    <!-- test data -->
-    <script type="text/javascript">
-        data = {
-            user: {
-                login: "tomek",
-                first_name: "Thomas",
-                last_name: "Mazur",
-                account: {
-                    status: "active",
-                    expires_at: "2009-12-31"
-                }
-            }
-        }
-    </script>
+<head>
+	<title>Test page for nano</title>
+	<!-- include lib -->
+	<script type="text/javascript" src="nano.js"></script>
+
+	<!-- test data -->
+	<script type="text/javascript">
+		data = {
+			users: [{
+					login: "tomek",
+					first_name: "Thomas",
+					last_name: "Mazur",
+					account: {
+						status: "active",
+						expires_at: "2009-12-31"
+					}
+				},
+				{
+					login: "NoctalIvan",
+					first_name: "Ivan",
+					last_name: "Sedletzki",
+					account: {
+						status: "inactive",
+						expires_at: "2017-12-23"
+					}
+				}
+			]
+		}
+
+	</script>
 
 </head>
+
 <body>
 
 
-<p id="testLayout">nano("&lt;p&gt;Hello {user.first_name} {user.last_name}! Your account&nbsp;is &lt;strong&gt;{user.account.status}&lt;/strong&gt;&lt;/p&gt;", data)</p>
+	<div id="testLayout">
+
+		<ul>
+			[{users}
+			<li>
+				<p>Hello {first_name} {last_name}! Your account is <strong>{account.status}</strong></p>
+			</li>
+			]
+		</ul>
+
+	</div>
 
 
-<script type="text/javascript">
-    window.onload = function () {
-        document.getElementById('testLayout').innerHTML = nano("<p>Hello {user.first_name} {user.last_name}! Your account is <strong>{user.account.status}</strong></p>", data);
-    }
-</script>
+	<script type="text/javascript">
+				window.onload = function() {
+					document.getElementById('testLayout').innerHTML = nano(document.getElementById('testLayout').innerHTML, data);
+				}
+
+	</script>
 </body>
+
 </html>
