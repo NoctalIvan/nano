@@ -56,7 +56,7 @@ data = {
 
 ... with the following template :
 
-<code>
+```html
 	
 <ul>
 	[{users}
@@ -64,7 +64,7 @@ data = {
 	]
 </ul>
 	
-</code>
+```
 
 ... to get 
 
